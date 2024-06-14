@@ -9,7 +9,7 @@ module.exports = {
 
     uploadFiles: (data) => {
         let stock = parseInt(data.stock)
-        let price = ((parseInt(data.MRP)) - (parseInt(data.price)) * 0.01 * (parseInt(data.discount))).toFixed(0);
+        let price = data.price
 
         data.price = price;
         data.stock = stock;
@@ -87,11 +87,6 @@ module.exports = {
         console.log(data.price);
 
 
-        let price = ((parseInt(data.MRP)) - (parseInt(data.price)) * 0.01 * (parseInt(data.discount))).toFixed(0)
-
-        console.log(price);
-        let newPrice = parseInt(price)
-
         let stock = parseInt(data.stock)
 
 
@@ -109,8 +104,8 @@ module.exports = {
                         storageCapacity: data.storageCapacity,
                         ram: data.ram,
                         weight: data.weight,
-                        MRP: data.MRP,
-                        price: newPrice,
+                        MRP: data.price,
+                        price: data.price,
                         operatingSystem: data.operatingSystem,
                         operatingSystemName: data.operatingSystemName,
                         warranty: data.warranty,

@@ -21,11 +21,10 @@
 			<div class="col-lg-5 offset-lg-1">
 				<div class="s_product_text">
 					<h3>{{product.productName}}</h3>
-					<h5 style="color:#ff7400">Rs {{product.price}} <del style="color:#ffc018;font-size:1rem">
+					<h5 style="color:#ff7400">${{product.price}} <del style="color:#ffc018;font-size:1rem">
 							{{product.MRP}} </del></h5>
 					<ul class="list">
 
-						<li><a href="#"><span style="color:orangered">{{product.discount}} %off</span></a></li>
 					</ul>
 
 
@@ -227,7 +226,7 @@
 
 <script>
 	function addToWishlist(proId) {
-		alert('hyy')
+		
 		$.ajax({
 			url: "/AddToWishlist/" + proId,
 			methode: "get",
@@ -236,10 +235,7 @@
 
 
 				if (Response.modifiedCount == 1) {
-
-
-
-					alert(Response)
+					alert("added to wishlist")
 					
 					let count = $('#wishCount').html()
 					count = parseInt(count) + 1
@@ -255,8 +251,7 @@
 	}
 	function addToCarts(proId, userId) {
 
-		alert(userId)
-		alert(proId)
+		
 
 		$.ajax({
 			url: "/AddToCarts",
@@ -270,8 +265,6 @@
 				if (Response.modifiedCount == 1) {
 
 					alert('added to cart')
-
-					alert(Response)
 					let count = $('#cartCount').html()
 					count = parseInt(count) + 1
 					$("#cartCount").html(parseInt(count))
