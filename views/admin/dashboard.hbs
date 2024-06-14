@@ -338,9 +338,9 @@
             success: (response) => {
 
                 document.getElementById('totalOrder').innerHTML = response.orderCount
-                document.getElementById('totalAmountPaid').innerHTML = 'Rs ' + response.totalAmountPaid
-                document.getElementById('totalAmountRefund').innerHTML = 'Rs ' + response.totalAmountRefund
-                document.getElementById('revenue').innerHTML = 'Rs ' + (parseInt(response.totalAmountPaid) - parseInt(response.totalAmountRefund))
+                document.getElementById('totalAmountPaid').innerHTML = '$' + response.totalAmountPaid
+                document.getElementById('totalAmountRefund').innerHTML = '$' + response.totalAmountRefund
+                document.getElementById('revenue').innerHTML = '$' + (parseInt(response.totalAmountPaid) - parseInt(response.totalAmountRefund))
 
 
 
