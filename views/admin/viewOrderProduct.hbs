@@ -160,7 +160,7 @@
                           </div>
 
                           <div class="col-md-2 text-center d-flex justify-content-center align-items-center">
-                            <p class="text-muted mb-0 small">₹{{this.products.price}}</p>
+                            <p class="text-muted mb-0 small">${{this.products.price}}</p>
                           </div>
                           <div class="col-md-2 text-center d-flex justify-content-center align-items-center">
                             <p class="text-muted mb-0 small">status:<span
@@ -201,7 +201,7 @@
 
                     </div>
                     <div class="d-flex justify-content-between">
-                      <p class="text-muted mb-0"><span class="fw-bold me-4">Subtotal</span> ₹{{orderDetails.subtotal}}
+                      <p class="text-muted mb-0"><span class="fw-bold me-4">Subtotal</span> ${{orderDetails.subtotal}}
                       </p>
 
                     </div>
@@ -212,18 +212,18 @@
                     </div>
                     <div class="d-flex justify-content-between ">
                       <p class="text-muted mb-0"><span class="fw-bold me-4">Total After
-                          Coupon</span>₹{{orderDetails.totalAmountWithoutShipping}}</p>
+                          Coupon</span>${{orderDetails.totalAmountWithoutShipping}}</p>
                     </div>
                     <div class="d-flex justify-content-between ">
-                      <p class="text-muted mb-0"><span class="fw-bold me-4">Shipping Charge</span>₹40</p>
+                      <p class="text-muted mb-0"><span class="fw-bold me-4">Shipping Charge</span>$40</p>
                     </div>
                     <div class="d-flex justify-content-between ">
                       <p class="text-muted mb-0"><span class="fw-bold me-4">Amount
-                          Paid</span>₹{{orderDetails.totalAmountPaid}}</p>
+                          Paid</span>${{orderDetails.totalAmountPaid}}</p>
                     </div>
                     <div class="d-flex justify-content-between ">
                       <p class="text-muted mb-0"><span
-                          class="fw-bold me-4">Refund</span>₹{{orderDetails.amountToBeRefunded}}</p>
+                          class="fw-bold me-4">Refund</span>${{orderDetails.amountToBeRefunded}}</p>
                     </div>
 
                   </div>
@@ -231,7 +231,7 @@
                     style="background-color: #8a9fdc; border-bottom-left-radius: 10px; border-bottom-right-radius: 10px;">
                     <h5 class="d-flex align-items-center justify-content-end text-white text-uppercase mb-0">Grand
                       Total:
-                      <span class="h2 mb-0 ms-2">₹{{orderDetails.totalAmountToBePaid}}</span>
+                      <span class="h2 mb-0 ms-2">${{orderDetails.totalAmountToBePaid}}</span>
                     </h5>
                   </div>
                 </div>

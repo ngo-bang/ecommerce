@@ -98,9 +98,9 @@
                                                     <td>
                                                         {{this.quantity}}
                                                     </td>
-                                                    <td>₹{{this.products.price}}
+                                                    <td>${{this.products.price}}
                                                     </td>
-                                                    <td>₹{{this.subtotal}}
+                                                    <td>${{this.subtotal}}
                                                     </td>
                                                 </tr>
                                                 {{/each}}
@@ -118,16 +118,16 @@
                                 <div class="col-md-6 px-5">
                                     
                                     <h5 class="mb-1">
-                                      <span class="text-white" >Subtotal:</span> <span class="text-white">₹ {{order.subtotal}}</span> 
+                                      <span class="text-white" >Subtotal:</span> <span class="text-white">$ {{order.subtotal}}</span> 
                                     </h5>
                                     <h6 class="mb-1">
-                                      <span class="text-white" >Coupon Discount:</span> <span class="text-white">₹ {{order.subtotal}}</span> 
+                                      <span class="text-white" >Coupon Discount:</span> <span class="text-white">$ {{order.subtotal}}</span> 
                                     </h6>
                                     <h6 class="mb-1">
-                                      <span class="text-white" >Total After Discount:</span> <span class="text-white">₹ {{order.totalAmountWithoutShipping}}</span> 
+                                      <span class="text-white" >Total After Discount:</span> <span class="text-white">$ {{order.totalAmountWithoutShipping}}</span> 
                                     </h6>
                                     <h6 class="mb-1">
-                                      <span class="text-white" >Shipping Charge:</span> <span class="text-white">₹ 40</span> 
+                                      <span class="text-white" >Shipping Charge:</span> <span class="text-white">$ 40</span> 
                                     </h6>
                                     
 
@@ -135,7 +135,7 @@
 
                                 <div class="col-md-6 text-right">
                                     <h4 class="mb-1">
-                                      <span class="text-white" >Grand Total:</span> <span class="text-white">₹ {{order.totalAmountToBePaid}}</span> 
+                                      <span class="text-white" >Grand Total:</span> <span class="text-white">$ {{order.totalAmountToBePaid}}</span> 
                                     </h4>
 
                                     

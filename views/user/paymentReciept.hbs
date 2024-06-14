@@ -14,7 +14,7 @@
                     <ul class="list">
                         <li><a href="#"><span>Order number</span> : {{orderDetails._id}}</a></li>
                         <li><a href="#"><span>Date</span> : {{orderDetails.date}}</a></li>
-                        <li><a href="#"><span>Total</span> : ₹{{orderDetails.totalAmountPaid}}</a></li>
+                        <li><a href="#"><span>Total</span> : ${{orderDetails.totalAmountPaid}}</a></li>
                         <li><a href="#"><span>Payment method</span> : {{orderDetails.paymentMethod}} </a></li>
                     </ul>
                 </div>
@@ -68,7 +68,7 @@
                                 <h5>x {{this.quantity}}</h5>
                             </td>
                             <td>
-                                <p>₹{{this.products.price}}</p>
+                                <p>${{this.products.price}}</p>
                             </td>
                         </tr>
                         {{/each}}
@@ -81,7 +81,7 @@
                                 <h5></h5>
                             </td>
                             <td>
-                                <p>₹{{orderDetails.subtotal}}</p>
+                                <p>${{orderDetails.subtotal}}</p>
                             </td>
                         </tr>
                         <tr>
@@ -103,7 +103,7 @@
                                 <h5></h5>
                             </td>
                             <td>
-                                <p> ₹{{orderDetails.totalAmountWithoutShipping}}</p>
+                                <p> ${{orderDetails.totalAmountWithoutShipping}}</p>
                             </td>
                         </tr>
                         <tr>
@@ -114,7 +114,7 @@
                                 <h5></h5>
                             </td>
                             <td>
-                                <p> ₹ 40</p>
+                                <p> $ 40</p>
                             </td>
                         </tr>
                         <tr>
@@ -125,7 +125,7 @@
                                 <h5></h5>
                             </td>
                             <td>
-                                <p>₹{{orderDetails.totalAmountPaid}}</p>
+                                <p>${{orderDetails.totalAmountPaid}}</p>
                             </td>
                         </tr>
                     </tbody>
