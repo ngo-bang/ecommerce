@@ -404,7 +404,7 @@ router.post('/getData', async (req, res) => {
     console.log("", sumArray);
     console.log("", dateArray);
     console.log("", totalArray);
-
+    console.log("", salesReport);
     res.json({ dateArray, totalArray, brandArray, sumArray, orderCount, totalAmountPaid, totalAmountRefund })
 
 
