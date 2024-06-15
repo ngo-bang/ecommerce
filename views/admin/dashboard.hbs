@@ -326,7 +326,9 @@
         </div>
     </div>
 </div>
-
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/moment@2.29.1"></script>
+<script src="https://cdn.jsdelivr.net/npm/chartjs-adapter-moment@1.0.0"></script>
 <script>
     async function forHome() {
         console.log('success1');
@@ -342,21 +344,18 @@
                 document.getElementById('totalAmountRefund').innerHTML = '$' + response.totalAmountRefund
                 document.getElementById('revenue').innerHTML = '$' + (parseInt(response.totalAmountPaid) - parseInt(response.totalAmountRefund))
 
-
-
                 console.log(totalAmount, 'toatalAmout');
 
                 console.log(response, 'reponse');
                 var ctx = document.getElementById('mychart').getContext('2d');
-                var chart = new Chart(ctx, {
+                var chart1 = new Chart(ctx, {
                     // The type of chart we want to create
                     type: 'line',
-
                     // The data for our dataset
                     data: {
                         labels: response.dateArray,
                         datasets: [{
-                            label: "last week dataset",
+                            label: "Earning",
                             backgroundColor: 'rgb(128, 204, 255)',
                             borderColor: 'rgb(128, 204, 255)',
                             borderWidth: 1,
@@ -366,13 +365,29 @@
 
                     // Configuration options go here
                     options: {
-                        tooltips: {
-                            mode: 'index'
-                        },
-
+                        scales: {
+                            x: {
+                                type: 'time',
+                                time: {
+                                unit: 'month'
+                                }
+                            },
+                            y: {
+                                beginAtZero: true
+                            }
+                        }
                     }
                 });
-
+                var timeScaleSelect = document.createElement('select');
+                timeScaleSelect.options.add(new Option('Day', 'day'));
+                timeScaleSelect.options.add(new Option('Week', 'week'));
+                timeScaleSelect.options.add(new Option('Month', 'month'));
+                timeScaleSelect.onchange = function() {
+                    Chart1.options.scales.x.time.unit = this.value;
+                    Chart1.update();
+                };
+                document.body.appendChild(timeScaleSelect);
+                }
                 var ctxs = document.getElementById('brand').getContext('2d');
                 var chart = new Chart(ctxs, {
                     // The type of chart we want to create
@@ -396,7 +411,7 @@
                         }
                     }
                 });
-            }
+            
         })
 
 

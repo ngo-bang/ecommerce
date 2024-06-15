@@ -468,9 +468,11 @@ module.exports = {
     let d1, d2, text;
     if (!startDate || !endDate) {
       d1 = new Date();
-      d1.setDate(d1.getDate() - 7);
+      d1.setDate(d.getFullYear()-1,
+      d.getMonth(), 
+      1);
       d2 = new Date();
-      text = "For the Last 7 days";
+      text = "For the Last Year";
     } else {
       d1 = new Date(startDate);
       d2 = new Date(endDate);
