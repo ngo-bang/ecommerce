@@ -532,13 +532,10 @@ module.exports = {
         }
 
       ]).toArray()
-      let orderCount = await db.get().collection(collection.ORDER_COLLECTION).find({ date: { $gt: d1, $lt: d2 } }).count()
+      let orderCount = await db.get().collection(collection.ORDER_COLLECTION).find().count()
 
 
       let totalAmounts = await db.get().collection(collection.ORDER_COLLECTION).aggregate([
-        {
-          $match: { date: { $gt: d1, $lt: d2 } }
-        },
         {
           $match: { status: 'placed' }
         },
@@ -553,9 +550,6 @@ module.exports = {
       ]).toArray()
 
       let totalAmountRefund = await db.get().collection(collection.ORDER_COLLECTION).aggregate([
-        {
-          $match: { date: { $gt: d1, $lt: d2 } }
-        },
         {
           $match: { status: 'placed' }
         },
