@@ -468,7 +468,9 @@ module.exports = {
     let d1, d2, text;
     if (!startDate || !endDate) {
       d1 = new Date();
-      d1.setDate(d1.getDate() - 7);
+      d1.setDate(d1.getFullYear(),
+      d1.getMonth(), 
+      1);
       d2 = new Date();
       text = "For the Last 7 days";
     } else {
@@ -485,19 +487,11 @@ module.exports = {
       let salesReport = await db.get().collection(collection.ORDER_COLLECTION).aggregate([
 
         {
-          $match: {
-            date: {
-              $lt: d2,
-              $gte: d1,
-            },
-          },
-        },
-        {
           $match: { status: 'placed' }
         },
         {
           $group: {
-            _id: { $dayOfMonth: "$date" },
+            _id: { $dateToString: { format: '%Y-%m', date: '$date' }},
             total: { $sum: "$totalAmountToBePaid" },
           },
         },
@@ -505,14 +499,6 @@ module.exports = {
 
 
       let brandReport = await db.get().collection(collection.ORDER_COLLECTION).aggregate([
-        {
-          $match: {
-            date: {
-              $lt: d2,
-              $gte: d1,
-            },
-          },
-        },
         {
           $match: { status: 'placed' }
         },

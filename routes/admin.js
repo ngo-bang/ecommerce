@@ -386,8 +386,12 @@ router.post('/getData', async (req, res) => {
 
     let dateArray = [];
     let totalArray = [];
+    salesReport.sort((a, b) => {
+      return a._id.localeCompare(b._id);
+    });
+
     salesReport.forEach((s) => {
-      dateArray.push(`${month}-${s._id} `);
+      dateArray.push(`${s._id} `);
       totalArray.push(s.total);
     })
 
@@ -405,6 +409,7 @@ router.post('/getData', async (req, res) => {
     console.log("", dateArray);
     console.log("", totalArray);
     console.log("", salesReport);
+
     res.json({ dateArray, totalArray, brandArray, sumArray, orderCount, totalAmountPaid, totalAmountRefund })
 
 
