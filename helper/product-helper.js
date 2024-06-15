@@ -13,6 +13,7 @@ module.exports = {
 
         data.price = price;
         data.stock = stock;
+        data.sold=0;
         let response = {}
         return new Promise(async (resolve, reject) => {
 
@@ -110,7 +111,7 @@ module.exports = {
                         operatingSystemName: data.operatingSystemName,
                         warranty: data.warranty,
                         stock: stock,
-                        sold: 0,
+                        // sold: 0,
                         inBox: data.inBox,
                         color: data.color,
                         shippingCost: data.shippingCost,

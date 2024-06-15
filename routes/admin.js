@@ -159,7 +159,6 @@ router.get('/editProduct/:id', (req, res) => {
   console.log(proId);
 
   productHelpers.findaProduct(proId).then((response) => {
-    console.log('hyyyyyyy')
     req.session.product = response
     res.redirect('/admin/edit-product')
   })
