@@ -25,30 +25,6 @@ module.exports = {
 
 
                 db.get().collection(collection.USER_COLLECTION).insertOne(userData).then((response) => {
-                    var toEmail = userData.email;
-
-                    var transporter = nodemailer.createTransport({
-                        service: 'gmail',
-                        auth: {
-                            user: email,
-                            pass: password,
-                        }
-                    });
-                    transporter.sendMail({
-                        from: email,
-                        to: toEmail,
-                        subject: 'Welcome Mail',
-                        text: 'welcome to e store',
-                        html: '<p>Welcome <b>to EStore</b></p>'
-                    }, function (error, response) {
-                        if (error) {
-                            console.log('Failed in sending mail');
-                        } else {
-                            console.log('Successful in sending email');
-                        }
-                    });
-
-
                     resolve({ status: true })
 
                 })
@@ -89,27 +65,6 @@ module.exports = {
         })
     },
 
-    doMobileCheck: (mobiles) => {
-
-        return new Promise(async (resolve, reject) => {
-            let response = {}
-
-            let user = await db.get().collection(collection.USER_COLLECTION).findOne({ mobile: mobiles })
-            console.log(user)
-
-            if (user) {
-                response.user = user
-                response.status = true
-                resolve(response)
-            }
-
-            else {
-                resolve({ stauts: false })
-            }
-
-        })
-
-    },
     updatePass: (data) => {
         let response = {}
         return new Promise(async (resolve, reject) => {

@@ -184,65 +184,6 @@ router.get('/forgot', (req, res) => {
   res.render('user/forgotpassword')
 })
 
-// router.post('/forgot', (req, res) => {
-//   userHelpers.doMobileCheck(req.body.mobile).then((response) => {
-//     req.session.userMob2 = req.body.mobile
-//     if (response.status) {
-
-//       client.verify
-//         .services(ServiceSID)
-//         .verifications.create({
-//           to: `+91${req.body.mobile}`,
-//           channel: "sms"
-
-//         }).then((response) => {
-
-//           if (response.status) {
-
-//             res.redirect('/otp2')
-//           }
-//           else {
-//             res.redirect('/forgot')
-//           }
-//         })
-
-//     }
-//     else {
-//       res.redirect('/forgot')
-//     }
-//   })
-
-// })
-
-// router.get('/otp2', (req, res) => {
-//   let otpErr2 = req.session.otpErr2
-//   let mobile = req.session.userMob2
-//   res.render('user/otp2', { otp: true, otpErr2, mobile })
-//   req.session.otpErr2 = false
-
-// })
-
-// router.post('/passOtp', (req, res) => {
-//   let mob2 = req.session.userMob2
-
-//   client.verify
-//     .services(ServiceSID)
-//     .verificationChecks.create({
-//       to: `+91${mob2}`,
-//       code: req.body.otp,
-//     }).then((response) => {
-//       console.log(response)
-//       if (response.valid) {
-
-//         res.redirect("/new");
-//       } else {
-
-//         req.session.otpErr2 = 'invalid otp'
-//         res.redirect("/otp2");
-//       }
-//     })
-
-// })
 
 router.get('/new', (req, res) => {
   res.render('user/newpassword')
