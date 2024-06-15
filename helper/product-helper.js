@@ -110,6 +110,7 @@ module.exports = {
                         operatingSystemName: data.operatingSystemName,
                         warranty: data.warranty,
                         stock: stock,
+                        sold: 0,
                         inBox: data.inBox,
                         color: data.color,
                         shippingCost: data.shippingCost,

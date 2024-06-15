@@ -66,7 +66,7 @@ let couponOff=0
     products.forEach(async (result) => {
 
       db.get().collection(collection.PRODUCT_COLLECTION).updateOne({_id:objectId(result.item)},
-      { $inc: { stock: -result.quantity } })
+      { $inc: { stock: -result.quantity, sold: result.quantity } })
 
 
     })
